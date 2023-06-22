@@ -1,0 +1,168 @@
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font: 16px/1.5 monospace;
+    /* font-weight: bold; */
+    color: #fff;
+    background-color: #000000;
+}
+
+img{
+    margin-bottom: -2px;
+}
+
+div {
+    margin: 0px;
+}
+
+/* .ui{
+    margin-left: 20px;
+    margin-right: 20px;
+    float: right;
+} */
+.money {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
+    color: #000000;
+    width: 90px;
+    max-height: 200px;
+    padding: 5px 10px;
+    background: #fff;
+    border: 3px solid #b743f5;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+
+.money__count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.money__count img {
+    margin-right: 5px
+}
+
+.tower {
+    font-size: 17px;
+    padding: 5px 15px 5px 10px;
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    z-index: 20;
+    color: #000000;
+    max-width: 100px;
+    max-height: 200px;
+    background: #fff;
+    border: 3px solid #b743f5;
+    border-radius: 10px;
+}
+
+.tower__count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rate {
+    font-size: 17px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    z-index: 20;
+    color: #000000;
+    width: 100%;
+    max-width: 60px;
+    max-height: 200px;
+    background: #fff;
+    border: 3px solid #b743f5;
+    border-radius: 10px;
+}
+
+.money__rate {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.money__rate img {
+    margin-right: 5px;
+}
+
+button {
+    margin: 5px;
+}
+
+.custom-btn {
+    /* margin-top: 200px; */
+    width: 250px;
+    height: 40px;
+    color: #000000;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+}
+
+.btn-15 {
+    background: #f2f2f2;
+    border: none;
+    z-index: 1;
+}
+
+.btn-15:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #b743f5;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    transition: all 0.3s ease;
+}
+
+.btn-15:hover {
+    color: #fff;
+}
+
+.btn-15:not([disabled]):hover:after {
+    left: 0;
+    width: 100%;
+}
+
+.btn-15:active {
+    top: 2px;
+}
+
+.btn-15:disabled {
+    color: rgba(0, 0, 0, 0.5);
+    cursor: default;
+    background-color: rgb(130, 130, 130);
+    box-shadow: inset 2px 2px 2px 0px rgba(88, 83, 83, 0.5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+}

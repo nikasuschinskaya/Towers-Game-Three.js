@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Idle Game</title>
+        <link rel="stylesheet" href="./assets/styles/styles.css">
+        <link rel="stylesheet" href="./assets/styles/tabs.css">
+    </head>
+    <body>
+        <script src="./js/scene.js" type="module"></script>
+
+        <audio style="display: none;" class="sound">
+            <source src="./assets/sounds/Clown.mp3" type="audio/mpeg">
+        </audio>
+        <audio style="display: none;" class="buySound">
+            <source src="./assets/sounds/buyButtonsSound.mp3" type="audio/mpeg">
+        </audio>
+        <audio style="display: none;" class="upgradeSound">
+            <source src="./assets/sounds/updradeButtonSound.mp3" type="audio/mpeg">
+        </audio>
+        <audio style="display: none;" class="convertSound">
+            <source src="./assets/sounds/converterButtonSound.mp3" type="audio/mpeg">
+        </audio>
+        <audio style="display: none;" class="winGame">
+            <source src="./assets/sounds/winSound.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="money">
+            <div class="money__count"><img src="./assets/img/trashMoney.png"
+                    width="15" height="15"> <span
+                    id="trash_money_count">0</span></div>
+            <div class="money__count"><img src="./assets/img/metalMoney.png"
+                    width="15" height="15"> <span
+                    id="metal_money_count">0</span></div>
+            <div class="money__count"><img src="./assets/img/bronzeMoney.png"
+                    width="15" height="15">
+                <span id="bronze_money_count">0</span></div>
+            <div class="money__count"><img src="./assets/img/silverMoney.png"
+                    width="15" height="15">
+                <span id="silver_money_count">0</span></div>
+            <div class="money__count"><img src="./assets/img/goldenMoney.png"
+                    width="15" height="15">
+                <span id="golden_money_count">0</span></div>
+            <div class="money__count"><img src="./assets/img/platinumMoney.png"
+                    width="15" height="15">
+                <span id="platinum_money_count">0</span></div>
+        </div>
+
+        <div class="rate">
+            <div class="money__rate"><img src="./assets/img/plus.png" width="15"
+                    height="15"> <span id="trash_money_rate">0</span></div>
+            <div class="money__rate"><img src="./assets/img/plus.png" width="15"
+                    height="15"> <span id="metal_money_rate">0</span></div>
+            <div class="money__rate"><img src="./assets/img/plus.png" width="15"
+                    height="15"> <span id="bronze_money_rate">0</span></div>
+            <div class="money__rate"><img src="./assets/img/plus.png" width="15"
+                    height="15"> <span id="silver_money_rate">0</span></div>
+            <div class="money__rate"><img src="./assets/img/plus.png" width="15"
+                    height="15"> <span id="golden_money_rate">0</span></div>
+            <div class="money__rate"><img src="./assets/img/plus.png" width="15"
+                    height="15"> <span id="platinum_money_rate">0</span></div>
+        </div>
+
+        <div class="tower">
+            <div class="tower__count">
+                <img src="./assets/img/metalTower.png" width="15" height="15">
+                <span
+                    id="metal_tower_count">0</span>
+                <img src="./assets/img/level.png" width="15" height="15"> <span
+                    id="get_metal_tower_level">0</span>
+            </div>
+            <div class="tower__count">
+                <img src="./assets/img/bronzeTower.png" width="15" height="15">
+                <span id="bronze_tower_count">0</span> <img
+                    src="./assets/img/level.png" width="15" height="15"> <span
+                    id="get_bronze_tower_level">0</span>
+            </div>
+            <div class="tower__count"><img src="./assets/img/silverTower.png"
+                    width="15" height="15">
+                <span id="silver_tower_count">0</span> <img
+                    src="./assets/img/level.png" width="15" height="15"> <span
+                    id="get_silver_tower_level">0</span></div>
+            <div class="tower__count"><img src="./assets/img/goldTower.png"
+                    width="15" height="15"> <span
+                    id="golden_tower_count">0</span> <img
+                    src="./assets/img/level.png" width="15" height="15"> <span
+                    id="get_golden_tower_level">0</span></div>
+            <div class="tower__count"><img src="./assets/img/platinumTower.png"
+                    width="15" height="15">
+                <span id="platinum_tower_count">0</span> <img
+                    src="./assets/img/level.png" width="15" height="15"> <span
+                    id="get_platinum_tower_level">0</span></div>
+        </div>
+
+        <div class="tabs">
+            <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+            <label for="tab-btn-1">Покупка</label>
+            <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+            <label for="tab-btn-2">Улучшение</label>
+            <input type="radio" name="tab-btn" id="tab-btn-3" value="">
+            <label for="tab-btn-3">Конвертер</label>
+
+            <div id="content-1" class="content">
+                <fieldset>
+                    <legend>Металлические башни <img
+                            src="./assets/img/metalTower.png" width="20"
+                            height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="create_metal_tower_btn">Купить за <span
+                            id="get_create_metal_tower_cost">0</span> <img
+                            src="./assets/img/trashMoney.png" width="15"
+                            height="15"></button><br>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Бронзовые башни <img
+                            src="./assets/img/bronzeTower.png" width="20"
+                            height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="create_bronze_tower_btn">Купить за <span
+                            id="get_create_bronze_tower_cost">0</span> <img
+                            src="./assets/img/metalMoney.png" width="15"
+                            height="15"></button><br>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Серебряные башни <img
+                            src="./assets/img/silverTower.png" width="20"
+                            height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="create_silver_tower_btn">Купить за <span
+                            id="get_create_silver_tower_cost">0</span> <img
+                            src="./assets/img/bronzeMoney.png" width="15"
+                            height="15"></button><br>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Золотые башни <img src="./assets/img/goldTower.png"
+                            width="20" height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="create_golden_tower_btn">Купить за <span
+                            id="get_create_gold_tower_cost">0</span> <img
+                            src="./assets/img/silverMoney.png" width="15"
+                            height="15"></button><br>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Платиновые башни <img
+                            src="./assets/img/platinumTower.png" width="20"
+                            height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="create_platinum_tower_btn">Купить за <span
+                            id="get_create_platinum_tower_cost">0</span> <img
+                            src="./assets/img/goldenMoney.png" width="15"
+                            height="15"></button><br>
+                </fieldset>
+            </div>
+            <div id="content-2" class="content">
+                <fieldset>
+                    <legend>Металлические башни <img
+                            src="./assets/img/metalTower.png" width="20"
+                            height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="upgrade_metal_towers_btn">Улучшить за <span
+                            id="get_upgrade_metal_tower_cost">0</span> <img
+                            src="./assets/img/trashMoney.png" width="15"
+                            height="15"></button>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Бронзовые башни <img
+                            src="./assets/img/bronzeTower.png" width="20"
+                            height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="upgrade_bronze_towers_btn">Улучшить за <span
+                            id="get_upgrade_bronze_tower_cost">0</span> <img
+                            src="./assets/img/metalMoney.png" width="15"
+                            height="15"></button>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Серебряные башни <img
+                            src="./assets/img/silverTower.png" width="20"
+                            height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="upgrade_silver_towers_btn">Улучшить за <span
+                            id="get_upgrade_silver_tower_cost">0</span> <img
+                            src="./assets/img/bronzeMoney.png" width="15"
+                            height="15"></button>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Золотые башни <img src="./assets/img/goldTower.png"
+                            width="20" height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="upgrade_golden_towers_btn">Улучшить за <span
+                            id="get_upgrade_golden_tower_cost">0</span> <img
+                            src="./assets/img/silverMoney.png" width="15"
+                            height="15"></button>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Платиновые башни <img
+                            src="./assets/img/platinumTower.png" width="20"
+                            height="20"></legend>
+                    <button class="custom-btn btn-15"
+                        id="upgrade_platinum_towers_btn">Улучшить за <span
+                            id="get_upgrade_platinum_tower_cost">0</span> <img
+                            src="./assets/img/goldenMoney.png" width="15"
+                            height="15"></button>
+                </fieldset>
+            </div>
+            <div id="content-3" class="content">
+                <button class="custom-btn btn-15" id="trash_to_metal_btn">Поменять
+                    10 <img src="./assets/img/trashMoney.png" width="15"
+                        height="15"> на 1 <img src="./assets/img/metalMoney.png"
+                        width="15" height="15"></button><br>
+                <button class="custom-btn btn-15" id="metal_to_bronze_btn">Поменять
+                    100 <img src="./assets/img/metalMoney.png" width="15"
+                        height="15"> на 1 <img
+                        src="./assets/img/bronzeMoney.png" width="15"
+                        height="15"></button><br>
+                <button class="custom-btn btn-15" id="bronze_to_silver_btn">Поменять
+                    100 <img src="./assets/img/bronzeMoney.png" width="15"
+                        height="15"> на 1 <img
+                        src="./assets/img/silverMoney.png" width="15"
+                        height="15"></button><br>
+                <button class="custom-btn btn-15" id="silver_to_golden_btn">Поменять
+                    100 <img src="./assets/img/silverMoney.png" width="15"
+                        height="15"> на 1 <img
+                        src="./assets/img/goldenMoney.png" width="15"
+                        height="15"></button><br>
+                <button class="custom-btn btn-15" id="golden_to_platinum_btn">Поменять
+                    100 <img src="./assets/img/goldenMoney.png" width="15"
+                        height="15"> на 1 <img
+                        src="./assets/img/platinumMoney.png" width="15"
+                        height="15"></button><br>
+            </div>
+        </div>
+    </body>
+</html>

@@ -40,4 +40,4 @@ When a player accumulates 1000 platinum coins, a small pop-up window appears tha
 
 ![image](https://github.com/nikasuschinskaya/Towers-Game-Three.js/assets/92970744/413230f5-cf3a-442f-bff4-ba6e9930d255)
 
-
+By clicking on the "OK" button, the player will be able to view their savings and built towers.

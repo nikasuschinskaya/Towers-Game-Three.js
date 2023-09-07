@@ -21,7 +21,9 @@ Initially, only one currency accumulates – rusty coins. The purchase buttons, 
 - the revenue rate of all other towers is 0 coins per second;
 - number of towers of each type – 0 towers;
 - levels of towers of each type – 1 level for all towers.
-  
+
+## Gameplay
+
 The purchase button of the first metal-type tower becomes available when 20 rusty coins are accumulated. The tower is built by hovering the cursor over the desired area and clicking on the left mouse button. By holding down the right mouse button, the rotation of the field is available to view the model from all sides.
 
 ![image](https://github.com/nikasuschinskaya/Towers-Game-Three.js/assets/92970744/52194f68-515f-480f-a078-da9a60b6b0c4)
